@@ -1,7 +1,7 @@
 {
   "name": "grunt-html-to-jsobj",
   "description": "Compiles html templates to JavaScript",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "homepage": "https://github.com/winsonwq/grunt-html2js",
   "author": [
     {
