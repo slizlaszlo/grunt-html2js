@@ -65,17 +65,28 @@ module.exports = function(grunt) {
   };
 
   // compile a template to an angular module
-  var compileTemplate = function(filepath, quoteChar, indentString, useStrict, htmlmin, process) {
+  var compileTemplate = function (filepath, quoteChar, indentString, useStrict, htmlmin, process, templatePropertyName) {
     var content = getContent(filepath, quoteChar, indentString, htmlmin, process);
-    var module = 'templates[' + quoteChar + filepath + quoteChar + '] = ' + quoteChar + content + quoteChar + ';';
-
+    var module;
+    if (templatePropertyName == "useFileName") {
+        var propertyName = filepath.split('/').pop().split('.').shift();
+        module = 'templates[' + quoteChar + propertyName + quoteChar + '] = ' + quoteChar + content + quoteChar + ';';
+    } else {
+        module = 'templates[' + quoteChar + filepath + quoteChar + '] = ' + quoteChar + content + quoteChar + ';';
+    }
     return module;
   };
 
   // compile a template to an angular module
-  var compileCoffeeTemplate = function(filepath, quoteChar, indentString, htmlmin, process) {
-    var content = getContent(filepath, quoteChar, indentString, htmlmin, process);
-    var module = 'templates[' + quoteChar + filepath + quoteChar + '] = ' + quoteChar + content + quoteChar + ';';
+  var compileCoffeeTemplate = function (filepath, quoteChar, indentString, htmlmin, process, templatePropertyName) {
+      var content = getContent(filepath, quoteChar, indentString, htmlmin, process);
+      var module;
+      if (templatePropertyName == "useFileName") {
+          var propertyName = filepath.split('/').pop().split('.').shift();
+          module = 'templates[' + quoteChar + propertyName + quoteChar + '] = ' + quoteChar + content + quoteChar + ';';
+      } else {
+          module = 'templates[' + quoteChar + filepath + quoteChar + '] = ' + quoteChar + content + quoteChar + ';';
+      }
 
     return module;
   };
@@ -90,7 +101,8 @@ module.exports = function(grunt) {
       indentString: '  ',
       target: 'js',
       htmlmin: {},
-      process: false
+      process: false,
+      templatePropertyName: ''
     });
 
     var counter = 0;
@@ -101,9 +113,9 @@ module.exports = function(grunt) {
       var modules = f.src.filter(existsFilter).map(function(filepath) {
 
         if (options.target === 'js') {
-          return compileTemplate(filepath, options.quoteChar, options.indentString, options.useStrict, options.htmlmin, options.process);
+            return compileTemplate(filepath, options.quoteChar, options.indentString, options.useStrict, options.htmlmin, options.process, options.templatePropertyName);
         } else if (options.target === 'coffee') {
-          return compileCoffeeTemplate(filepath, options.quoteChar, options.indentString, options.htmlmin, options.process);
+            return compileCoffeeTemplate(filepath, options.quoteChar, options.indentString, options.htmlmin, options.process, options.templatePropertyName);
         } else {
           grunt.fail.fatal('Unknow target "' + options.target + '" specified');
         }
