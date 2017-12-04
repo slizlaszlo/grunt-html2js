@@ -1,6 +1,6 @@
-# grunt-html2js
+# grunt-html-to-jsobj
 
-> current `grunt-html2js` is only for AngularJS template, but we need a common one.
+> This is a fork of the `grunt-common-html2js` which is a fork of the `grunt-html2js` which is only for AngularJS template.This fork adds a new option to modify/simplify the processed template name in the JS object.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.0`
