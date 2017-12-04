@@ -1,18 +1,22 @@
 {
   "name": "grunt-html-to-jsobj",
   "description": "Compiles html templates to JavaScript",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "homepage": "https://github.com/winsonwq/grunt-html2js",
-  "author": [{
-    "name": "Karl Goldstein",
-    "email": "karl.goldstein@gmail.com"
-  }, {
-    "name": "Wang Qiu",
-    "email": "winsonwq@gmail.com"
-  }, {
-    "name": "László Sliz",
-    "email": "slizlaszlo@gmail.com"
-}],
+  "author": [
+    {
+      "name": "Karl Goldstein",
+      "email": "karl.goldstein@gmail.com"
+    },
+    {
+      "name": "Wang Qiu",
+      "email": "winsonwq@gmail.com"
+    },
+    {
+      "name": "László Sliz",
+      "email": "slizlaszlo@gmail.com"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/slizlaszlo/grunt-html2js"
