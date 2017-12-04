@@ -162,6 +162,26 @@ Option value can be one of:
 2. an object that is passed as the second options argument to `grunt.template.process` (with the file content as the first argument)
 3.  `true` to call `grunt.template.process` with the content and no options
 
+#### options.templatePropertyName:
+Type: `String`
+Default value: ``
+
+Switches between two property name usage policy: either use the path of the file as a property name or only the file name or a part of it
+
+Option value can be one of:
+
+1. You can add an empty string as a value to use the default functionality
+2. You can use the `useFileName` value to use the template file name or the first part of the file name if it's divided by commas like `mytemplate.tpl.html` will be `test.templates.mytemplate` with the sample options used below
+
+```
+options: {
+  htmlmin: {
+    globalname: 'test.templates',
+    templatePropertyName: 'useFileName'
+  }
+}
+```
+
 ### Usage Examples
 
 See the `Gruntfile.js` in the project source code for various configuration examples.

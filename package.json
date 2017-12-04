@@ -1,7 +1,7 @@
 {
   "name": "grunt-common-html2js",
   "description": "Compiles html templates to JavaScript",
-  "version": "0.3.4",
+  "version": "4.0.0",
   "homepage": "https://github.com/winsonwq/grunt-html2js",
   "author": [{
     "name": "Karl Goldstein",
@@ -9,18 +9,21 @@
   }, {
     "name": "Wang Qiu",
     "email": "winsonwq@gmail.com"
-  }],
+  }, {
+    "name": "László Sliz",
+    "email": "slizlaszlo@gmail.com"
+}],
   "repository": {
     "type": "git",
-    "url": "https://github.com/winsonwq/grunt-html2js.git"
+    "url": "https://github.com/slizlaszlo/grunt-html2js"
   },
   "bugs": {
-    "url": "https://github.com/winsonwq/grunt-html2js/issues"
+    "url": "https://github.com/slizlaszlo/grunt-html2js/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/winsonwq/grunt-html2js/blob/master/LICENSE-MIT"
+      "url": "https://github.com/slizlaszlo/grunt-html2js/blob/master/LICENSE-MIT"
     }
   ],
   "main": "Gruntfile.js",
