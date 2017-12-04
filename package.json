@@ -1,5 +1,5 @@
 {
-  "name": "grunt-common-html2js",
+  "name": "grunt-html-to-jsobj",
   "description": "Compiles html templates to JavaScript",
   "version": "4.0.0",
   "homepage": "https://github.com/winsonwq/grunt-html2js",
