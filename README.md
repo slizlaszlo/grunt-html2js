@@ -166,12 +166,12 @@ Option value can be one of:
 Type: `String`
 Default value: ``
 
-Switches between two property name usage policy: either use the path of the file as a property name or only the file name or a part of it
+Switches between two property name usage policy: either use the path of the file as a property name or a part of the file name
 
 Option value can be one of:
 
 1. You can add an empty string as a value to use the default functionality
-2. You can use the `useFileName` value to use the template file name or the first part of the file name if it's divided by commas like `mytemplate.tpl.html` will be `test.templates.mytemplate` with the sample options used below
+2. You can use the `useFileName` value to use the first part of the file name if it's divided by dots like `mytemplate.tpl.html` will be `test.templates.mytemplate` with the sample options used below
 
 ```
 options: {
